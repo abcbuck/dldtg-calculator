@@ -20,7 +20,7 @@ jobs:
 
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-        build_type: [MinSizeRel]
+        build_type: [Release]
         cpp_compiler: [clang++]
     
     outputs:
