@@ -33,8 +33,15 @@ Please enter desired truth table 1: 00001000
 Please enter desired truth table 2: 11111110
 Number of inputs: 3
 
-Initializing... done.
-Creating additional circuits of size 1...2...3...4...5...6...7...
+Initializing... done.  Number of circuits in memory: 1
+Creating circuits with a total of 1 NAND gates... done.  Number of circuits in memory: 6
+Creating circuits with a total of 2 NAND gates... done.  Number of circuits in memory: 36
+Creating circuits with a total of 3 NAND gates... done.  Number of circuits in memory: 206
+Creating circuits with a total of 4 NAND gates... done.  Number of circuits in memory: 1252
+Creating circuits with a total of 5 NAND gates... done.  Number of circuits in memory: 8188
+Creating circuits with a total of 6 NAND gates... done.  Number of circuits in memory: 56097
+Creating circuits with a total of 7 NAND gates...
+
 Found solution of size 7!!
 00001000
 00001010

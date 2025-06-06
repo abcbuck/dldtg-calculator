@@ -52,7 +52,7 @@ int main() {
 
   const int numberOfInputs = log2(desiredTruthTables.begin()->size());
   std::cout << "Number of inputs: " << numberOfInputs << std::endl << std::endl
-    << "Initializing... ";
+    << "Initializing...";
   //every circuit is a set of truth tables
   std::set<std::set<std::vector<bool>>> circuits;
   std::set<std::vector<bool>> startCircuit;
@@ -69,13 +69,12 @@ int main() {
     delete[] inputs;
   }
   circuits.emplace(startCircuit);
-  std::cout << "done." << std::endl
-    << "Creating additional circuits of size ";
   //add all possible circuits for the amount nandAmount=1 of nands,
   //continually increase this number until a circuit with the desired truth table has been found
   bool foundIt = false;
   for (int nandAmount = 1; ; nandAmount++) {
-    std::cout << nandAmount << "...";
+    std::cout << " done.  Number of circuits in memory: " << circuits.size() << std::endl
+              << "Creating circuits with a total of " << nandAmount << " NAND gates...";
     std::set<std::set<std::vector<bool>>> newCircuits;
     for (auto i = circuits.begin(); i != circuits.end(); i++) {
       for (auto j = i->begin(); j != i->end(); j++) {
@@ -87,7 +86,8 @@ int main() {
           newCircuit.emplace(sNand); //add new gate
           if (isSubset(desiredTruthTables, newCircuit)) {
             std::cout << std::endl
-              << "Found solution of size " << nandAmount << "!!" << std::endl;
+                      << std::endl
+                      << "Found solution of size " << nandAmount << "!!" << std::endl;
             print(newCircuit);
             printReadable(newCircuit, desiredTruthTables);
             //truth table has been found
